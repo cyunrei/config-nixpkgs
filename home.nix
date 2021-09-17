@@ -23,8 +23,8 @@
     ./config/pkgs/applications/editors/neovim.nix
     ./config/pkgs/applications/version-management/git.nix
     ./config/pkgs/shells/zsh.nix
-    ./config/pkgs/tools/msic/bat.nix
-    ./config/pkgs/tools/msic/lsd.nix
+    ./config/pkgs/tools/misc/bat.nix
+    ./config/pkgs/tools/misc/lsd.nix
     ./config/pkgs/tools/package-management/home-manager.nix
   ];
 }
