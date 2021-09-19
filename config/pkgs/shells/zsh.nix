@@ -12,6 +12,8 @@
         source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
         # https://github.com/zdharma/fast-syntax-highlighting#manual
         source ${pkgs.zsh-fast-syntax-highlighting}/share/zsh/site-functions/fast-syntax-highlighting.plugin.zsh
+        # https://github.com/romkatv/powerlevel10k/issues/87
+        ZLE_RPROMPT_INDENT=0
       '';
       oh-my-zsh = {
         enable = true;
