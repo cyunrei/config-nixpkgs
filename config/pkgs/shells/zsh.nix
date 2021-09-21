@@ -23,6 +23,8 @@
         top = "${pkgs.htop}/bin/htop";
         cls = "clear";
         hm = "home-manager";
+        # https://stackoverflow.com/questions/9445489/performing-http-requests-with-curl-using-proxy
+        setproxy = "export http_proxy=http://localhost:8118/ && export http_proxy=http://localhost:8118/";
       };
     };
   };
