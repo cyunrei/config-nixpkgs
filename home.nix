@@ -18,6 +18,7 @@
     config/pkgs/development/tools/build-managers/gradle.nix
     config/pkgs/development/tools/yarn.nix
     config/pkgs/development/node-packages.nix
+    config/pkgs/shells/fish.nix
     config/pkgs/shells/zsh.nix
     config/pkgs/tools/misc/bat.nix
     config/pkgs/tools/misc/lsd.nix
