@@ -7,6 +7,7 @@
     stateVersion = "21.11";
     packages = with pkgs; [
       nixpkgs-fmt
+      nodejs
     ];
   };
 
@@ -14,8 +15,9 @@
     config/pkgs/applications/editors/neovim.nix
     config/pkgs/applications/misc/ranger.nix
     config/pkgs/applications/version-management/git.nix
-    config/pkgs/development/node-packages.nix
     config/pkgs/development/tools/build-managers/gradle.nix
+    config/pkgs/development/tools/yarn.nix
+    config/pkgs/development/node-packages.nix
     config/pkgs/shells/zsh.nix
     config/pkgs/tools/misc/bat.nix
     config/pkgs/tools/misc/lsd.nix
