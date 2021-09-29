@@ -13,6 +13,7 @@
 
   imports = [
     config/pkgs/applications/editors/neovim.nix
+    config/pkgs/applications/misc/hugo.nix
     config/pkgs/applications/misc/ranger.nix
     config/pkgs/applications/version-management/git.nix
     config/pkgs/development/tools/build-managers/gradle.nix
