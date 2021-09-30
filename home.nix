@@ -22,7 +22,7 @@
     config/pkgs/shells/fish.nix
     config/pkgs/shells/zsh.nix
     config/pkgs/tools/misc/bat.nix
-    config/pkgs/tools/misc/lsd.nix
+    config/pkgs/tools/misc/exa.nix
     config/pkgs/tools/package-management/home-manager.nix
     config/pkgs/tools/system/htop.nix
   ];
