@@ -11,7 +11,8 @@
         cls = "clear";
         hm = "home-manager";
         # https://stackoverflow.com/questions/9445489/performing-http-requests-with-curl-using-proxy
-        setproxy = "export http_proxy=http://localhost:8118/ && export http_proxy=http://localhost:8118/";
+        setproxy = "export http_proxy=http://localhost:8118/ && export https_proxy=https://localhost:8118/";
+        unsetproxy = "set --erase http_proxy && set --erase https_proxy";
       };
       plugins = [
     {
