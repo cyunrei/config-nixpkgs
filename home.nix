@@ -6,8 +6,10 @@
     homeDirectory = "/home/cyunrei";
     stateVersion = "21.11";
     packages = with pkgs; [
+      conda
       nixpkgs-fmt
       nodejs
+      nix-prefetch-git
     ];
   };
 
