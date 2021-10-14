@@ -5,6 +5,8 @@
       enable = true;
       shellInit = ''
         replay source $HOME/.nix-profile/etc/profile.d/nix.sh
+        # https://fishshell.com/docs/current/cmds/fish_add_path.html
+        fish_add_path $HOME/.local/bin/
       '';
       shellAliases = {
         top = "${pkgs.htop}/bin/htop";
