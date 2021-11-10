@@ -12,6 +12,7 @@
         top = "${pkgs.htop}/bin/htop";
         cls = "clear";
         hm = "home-manager";
+        glances = "glances --theme-white";
         # https://stackoverflow.com/questions/9445489/performing-http-requests-with-curl-using-proxy
         setproxy = "export http_proxy=http://localhost:8118/ && export https_proxy=https://localhost:8118/";
         unsetproxy = "set --erase http_proxy && set --erase https_proxy";
