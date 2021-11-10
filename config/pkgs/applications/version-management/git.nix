@@ -9,7 +9,7 @@
       };
       extraConfig = {
         http.proxy = "socks5://localhost:1080";
-        core.editor = "nvim";
+        core.editor = "vim";
       };
     };
   };
