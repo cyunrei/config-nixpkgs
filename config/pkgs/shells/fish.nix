@@ -13,9 +13,26 @@
         cls = "clear";
         hm = "home-manager";
         glances = "glances --theme-white";
+
+        # Proxy alias start #
         # https://stackoverflow.com/questions/9445489/performing-http-requests-with-curl-using-proxy
         setproxy = "export http_proxy=http://localhost:8118/ && export https_proxy=https://localhost:8118/";
         unsetproxy = "set --erase http_proxy && set --erase https_proxy";
+        # Proxy alias end #
+
+        # Pacman alias start #
+        # https://gist.github.com/alekratz/838a3d5b9b679eee8c81
+        pac = "sudo pacman -S";   # install
+        pacu = "sudo pacman -Syu";    # update, add 'a' to the list of letters to update AUR packages if you use yaourt
+        pacr = "sudo pacman -Rs";   # remove
+        pacs = "sudo pacman -Ss";      # search
+        paci = "sudo pacman -Si";     # info
+        paclo = "sudo pacman -Qdt";    # list orphans
+        pacro = "paclo && sudo pacman -Rns (sudo pacman -Qtdq)"; # remove orphans
+        pacc = "sudo pacman -Scc";    # clean cache
+        paclf = "sudo pacman -Ql";   # list files
+        # Pacman alias end #
+
       };
       plugins = [
         {
