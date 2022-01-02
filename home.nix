@@ -8,7 +8,6 @@
   };
 
   imports = [
-    # config/pkgs/applications/editors/neovim.nix
 
     config/pkgs/applications/misc/hugo.nix
     config/pkgs/applications/misc/ranger.nix
@@ -25,10 +24,10 @@
     config/pkgs/development/node-packages.nix
 
     config/pkgs/shells/fish.nix
-    config/pkgs/shells/zsh.nix
 
     config/pkgs/tools/misc/bat.nix
     config/pkgs/tools/misc/exa.nix
+    config/pkgs/tools/misc/neofetch.nix
 
     config/pkgs/tools/nix/nixpkgs-fmt.nix
 
