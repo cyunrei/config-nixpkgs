@@ -33,6 +33,7 @@
         paclf = "sudo pacman -Ql";   # list files
         # Pacman alias end #
 
+        pc4 = "proxychains4 -q";
       };
       plugins = [
         {
@@ -91,6 +92,9 @@
         add_newline = false;
         line_break = { disabled = true; };
       };
+    };
+    autojump = {
+      enable = true;
     };
   };
 }
