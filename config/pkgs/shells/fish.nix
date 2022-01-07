@@ -1,18 +1,22 @@
 { programs, home, pkgs, ... }:
 {
   programs = {
+    autojump.enable = true;
     fish = {
       enable = true;
       shellInit = ''
         replay source $HOME/.nix-profile/etc/profile.d/nix.sh
-        # https://fishshell.com/docs/current/cmds/fish_add_path.html
         fish_add_path $HOME/.local/bin/
       '';
       shellAliases = {
-        top = "${pkgs.htop}/bin/htop";
+
+        # Common alias start #
         cls = "clear";
         hm = "home-manager";
         glances = "glances --theme-white";
+        top = "${pkgs.htop}/bin/htop";
+        pc4 = "proxychains4 -q";
+        # Common alias end #
 
         # Proxy alias start #
         # https://stackoverflow.com/questions/9445489/performing-http-requests-with-curl-using-proxy
@@ -22,18 +26,27 @@
 
         # Pacman alias start #
         # https://gist.github.com/alekratz/838a3d5b9b679eee8c81
-        pac = "sudo pacman -S";   # install
-        pacu = "sudo pacman -Syu";    # update, add 'a' to the list of letters to update AUR packages if you use yaourt
-        pacr = "sudo pacman -Rs";   # remove
-        pacs = "sudo pacman -Ss";      # search
-        paci = "sudo pacman -Si";     # info
-        paclo = "sudo pacman -Qdt";    # list orphans
+        pac = "sudo pacman -S"; # install
+        pacu = "sudo pacman -Syu"; # update, add 'a' to the list of letters to update AUR packages if you use yaourt
+        pacr = "sudo pacman -Rs"; # remove
+        pacs = "sudo pacman -Ss"; # search
+        paci = "sudo pacman -Si"; # info
+        paclo = "sudo pacman -Qdt"; # list orphans
         pacro = "paclo && sudo pacman -Rns (sudo pacman -Qtdq)"; # remove orphans
-        pacc = "sudo pacman -Scc";    # clean cache
-        paclf = "sudo pacman -Ql";   # list files
+        pacc = "sudo pacman -Scc"; # clean cache
+        paclf = "sudo pacman -Ql"; # list files
         # Pacman alias end #
 
-        pc4 = "proxychains4 -q";
+        # yay alias start #
+        # https://gist.github.com/tz4678/0d97187a197def57f8b56cabac094401
+        yay = "pc4 yay"; # proxychains4 proxy
+        yai = "yay -S"; # install package(s)
+        yas = "yay -Ss"; # search packages
+        yad = "yay - Si"; # description of the package
+        yar = "yay -Rns"; # remove package(s)
+        yac = "yay -Yc"; # clean unwanted packages
+        # yay alias end #
+        
       };
       plugins = [
         {
@@ -92,9 +105,6 @@
         add_newline = false;
         line_break = { disabled = true; };
       };
-    };
-    autojump = {
-      enable = true;
     };
   };
 }
