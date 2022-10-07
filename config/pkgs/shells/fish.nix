@@ -7,22 +7,14 @@
       shellInit = ''
         replay source $HOME/.nix-profile/etc/profile.d/nix.sh
         fish_add_path $HOME/.local/bin/
+        fish_add_path $HOME/.node_modules/bin
       '';
       shellAliases = {
 
         # Common alias start #
-        cls = "clear";
-        hm = "home-manager";
         glances = "glances --theme-white";
         top = "${pkgs.htop}/bin/htop";
-        pc4 = "proxychains4 -q";
         # Common alias end #
-
-        # Proxy alias start #
-        # https://stackoverflow.com/questions/9445489/performing-http-requests-with-curl-using-proxy
-        setproxy = "export http_proxy=http://localhost:8118/ && export https_proxy=https://localhost:8118/";
-        unsetproxy = "set --erase http_proxy && set --erase https_proxy";
-        # Proxy alias end #
 
         # Pacman alias start #
         # https://gist.github.com/alekratz/838a3d5b9b679eee8c81
@@ -39,22 +31,21 @@
 
         # yay alias start #
         # https://gist.github.com/tz4678/0d97187a197def57f8b56cabac094401
-        yay = "pc4 yay"; # proxychains4 proxy
         yai = "yay -S"; # install package(s)
         yas = "yay -Ss"; # search packages
         yad = "yay - Si"; # description of the package
         yar = "yay -Rns"; # remove package(s)
         yac = "yay -Yc"; # clean unwanted packages
         # yay alias end #
-        
+
       };
       plugins = [
         {
           name = "done";
           src = pkgs.fetchgit {
             url = "https://github.com/franciscolourenco/done";
-            rev = "1.16.3";
-            sha256 = "sha256-Xld66z9vVp3kxikndZ9k/zlNvP0YSoSCNTBkJ8rT3uo=";
+            rev = "1.16.5";
+            sha256 = "sha256-E0wveeDw1VzEH2kzn63q9hy1xkccfxQHBV2gVpu2IdQ=";
           };
         }
         {
@@ -77,16 +68,16 @@
           name = "replay.fish";
           src = pkgs.fetchgit {
             url = "https://github.com/jorgebucaran/replay.fish";
-            rev = "1.2.0";
-            sha256 = "sha256-Q/9YVdiRSJw1SdcfQv2h7Lj6EyFustRk+kmh1eRRQ6k=";
+            rev = "1.2.1";
+            sha256 = "sha256-bM6+oAd/HXaVgpJMut8bwqO54Le33hwO9qet9paK1kY=";
           };
         }
         {
           name = "nix-completions.fish";
           src = pkgs.fetchgit {
             url = "https://github.com/kidonng/nix-completions.fish";
-            rev = "dcb15c4f7d3e85d8f7cd3eb09b3014ccd278aab8";
-            sha256 = "sha256-3HHcaX2yVZXrRjOeSlI8tPhSjRR2tPU6AWq6eU5nPOs=";
+            rev = "cd8a43bed96e0acc02228bc77502be8ba5fa0548";
+            sha256 = "sha256-spnLmde41qQt8uJZFwiH0igFuVqZ6SvkwdA9Kbe2yz8=";
           };
         }
         {

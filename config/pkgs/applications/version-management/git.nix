@@ -8,7 +8,6 @@
         st = "status";
       };
       extraConfig = {
-        http.proxy = "socks5://localhost:1080";
         core.editor = "vim";
       };
     };
