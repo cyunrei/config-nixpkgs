@@ -1,13 +1,19 @@
 { programs, home, pkgs, ... }:
 {
+  home.sessionVariables.MCFLY_LIGHT = "TRUE";
   programs = {
-    autojump.enable = true;
+
+    broot.enable = true;
+    mcfly.enable = true;
+    zoxide.enable = true;
+
     fish = {
       enable = true;
       shellInit = ''
         replay source $HOME/.nix-profile/etc/profile.d/nix.sh
         fish_add_path $HOME/.local/bin/
         fish_add_path $HOME/.node_modules/bin
+        export MCFLY_LIGHT=true
       '';
       shellAliases = {
 
@@ -81,11 +87,11 @@
           };
         }
         {
-          name = "docker.fish";
+          name = "fish-autocompletions";
           src = pkgs.fetchgit {
-            url = "https://github.com/Cyunrei/docker.fish";
-            rev = "7dce1b32973833ffa7024b740869e826357b3082";
-            sha256 = "090cb77kwxw867rrp6f3rh623vflh22l24r83dgxav55kakncz90";
+            url = "https://github.com/cyunrei/fish-autocompletions";
+            rev = "9810419d27d101b913e0056a15435c8c9c735385";
+            sha256 = "sha256-pn1M1zIVejFbhTrfXVuBwtabgpyIMF2VHs2ld9GccMo=";
           };
         }
       ];
